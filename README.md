@@ -1,9 +1,35 @@
 # Be not afraid of git
 
+## Preparation
 
-TODO install git
+### Install git
 
-TODO configure git
+If you are using a mac, it is possible that you already have git. Check by typing this command in Terminal.
+```
+git --version
+```
+
+If that gives you a version number, this means git is installed. But the Apple version of git is often behind the current release, so you may still want to install a newer version. To get git, first install `Homebrew`, this is a tool to manage software (known as a package manager). 
+
+Paste the following command into Terminal.
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+Once that is done, install git by running the following command in Terminal.
+```
+brew install git
+```
+
+
+### Configure git
+
+Set your username and user details by running the following commands. These will be used to label the changes that you "commit" later when we start using git.
+```
+git config --global user.name "Your Name Here"
+git config --global user.email "your@email.here"
+```
+
 
 ---
 
@@ -11,32 +37,32 @@ TODO configure git
 
 Make a folder for the toy project and get in there.
 ```
-mkdir git-learn
-cd git-learn
+mkdir git-learn-test
+cd git-learn-test
 ```
 
-Initialise this folder as a git repository.
+Initialise this folder as a git repository. This creates a bunch of hidden files which git uses to track the history of your work in this folder.
 ```
 git init
 ```
 
-Make a file.
+Make an empty file.
 ```
 touch names.txt
 ```
 
-Now we can add the new file to the `staging area`. This step is required before we can commit.
+Now we can **add** the new file to git's `staging area`. This step is required before we can "commit".
 ```
 git add names.txt
 ```
 
-And commit the change, with a message.
+And **commit** the change, with a message (`-m` is an option for including a message in the same command as the commit).
 ```
 git commit -m "Make a name file"
 ```
 
 
-Have a look at the log with this command.
+Have a look at what has changed with this command, which views the change log in a simple format.
 ```
 git log --pretty=oneline
 ```
@@ -58,7 +84,7 @@ Exit the log view by pressing `q`
 
 ## Exercise 2) A second commit
 
-Write something to the file.
+Write some content to the file.
 ```
 echo "ben" > names.txt
 ```
@@ -68,7 +94,7 @@ Check what state the project is in.
 git status
 ```
 
-Git tells us that a file has been `modified`. We can commit our change now. Previously, we did a two-stage process of adding then committing. Let's combine those into a single step.
+Git tells us that a file has been `modified`. We can commit our change now. Previously, we did a two-stage process of adding then committing. Let's combine those into a single step. The `-am` attributes are shorthand for add and message.
 ```
 git commit -am "Write a name into the file"
 ```
@@ -89,7 +115,7 @@ Make a change to the file, commit it and check the log.
  echo "benny" > names.txt
  git commit -am "Change file content"
  git log --pretty=oneline
- ```
+```
 
 ## Exercise 4) Branching
 
@@ -160,4 +186,10 @@ Note that `reset` will destroy changes that you haven't committed. Make sure you
 
 # Further Reading
 
-See this article for more information about the staging area https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh
+See this article for more information about the staging area.
+> https://dev.to/sublimegeek/git-staging-area-explained-like-im-five-1anh
+
+
+# Git Tutorial 
+This tutorial goes through using git with BitBucket, one of the major online git service providers. 
+> https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
