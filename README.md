@@ -9,7 +9,7 @@ If you are using a mac, it is possible that you already have git. Check by typin
 git --version
 ```
 
-If that gives you a version number, this means git is installed. But the Apple version of git is often behind the current release, so you may still want to install a newer version. To get git, first install `Homebrew`, this is a tool to manage software (known as a package manager). 
+If that gives you a version number, this means git is installed. But the Apple version of git is often behind the current release, so you may still want to install a newer version. To get git on Mac, first install `Homebrew`, this is a tool to manage software (known as a package manager). 
 
 Paste the following command into Terminal.
 ```
