@@ -16,6 +16,8 @@ Paste the following command into Terminal.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
+You may be asked for a password, if so type your computer admin user's password and press Return. It won't show any characters when you are typing the password!
+
 Once that is done, install git by running the following command in Terminal.
 ```
 brew install git
